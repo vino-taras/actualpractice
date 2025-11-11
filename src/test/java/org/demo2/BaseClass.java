@@ -38,7 +38,8 @@ public static Select s;
 		String currentUrl=driver.getCurrentUrl();
 	}
 	public static void passText(WebElement user,String name) {
-	user.sendKeys(name);
+	    user.clear();
+		user.sendKeys(name);
 	}
 	public static void click(WebElement element) {
 	element.click();
@@ -68,7 +69,7 @@ public static Select s;
 	public static void scrollTo(WebElement element2) {
 	a.scrollToElement(element2);
 	}
-	public static void selectbyvalue(WebElement element3,String value) {
+	public static void selectByValue(WebElement element3,String value) {
 	Select s= new Select(element3);
 		s.selectByValue(value);
 	}

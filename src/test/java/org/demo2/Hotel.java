@@ -18,22 +18,14 @@ public static void main(String[] args) throws Exception {
 	passText(l.getPassword(),"vinodhini90");
 	l.getLogin().click();
 	Thread.sleep(2000);
-	Select s=new Select(l.getLocation());
-	s.selectByValue("London");	
-	Select s1= new Select(l.getHotel());
-	s1.selectByIndex(2);
-	Select s2=new Select(l.getRoomtype());
-	s2.selectByVisibleText("Standard");
-	Thread.sleep(2000);
+	selectByValue(l.getLocation(),"London");
+	selectByIndex(l.getHotel(),2);
+	selectByVisibleText(l.getRoomtype(),"Standard");
 	passText(l.getCheckin(),"01/12/2025");
-	Thread.sleep(2000);
 	passText(l.getCheckout(),"03/12/2025");
 	Thread.sleep(2000);
-	s1.selectByIndex(1);
-	Thread.sleep(2000);
-	s2.selectByVisibleText("2 - Two");
-	
-	
+	selectByIndex(l.getAdults(),2);
+	selectByIndex(l.getChildren(),3);
 	
 	
 }

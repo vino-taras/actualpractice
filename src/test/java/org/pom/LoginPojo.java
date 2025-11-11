@@ -33,10 +33,42 @@ private WebElement children;
 private WebElement checkin;
 @FindBy(xpath="//input[@id='datepick_out']")
 private WebElement checkout;
+@FindBy(xpath="//input[@id='Submit']")
+private WebElement search;
+@FindBy(xpath="//input[@id='Reset']")
+private WebElement reset;
+@FindBy(xpath="//a[@href=\"https://adactinhotelapp.com/resources/AdactinHotelApp_SetupGuide.pdf\"]")
+private WebElement mobileapp;
+@FindBy(xpath="//a[@href=\"https://adactinhotelapp.com/HotelAdactinWebServices/\"]")
+private WebElement hotelappwebservices;
+@FindBy(xpath="//a[@href=\"http://adactinhotelapp.com/resources/Sample-TestCases_HotelApplication.pdf\"]")
+private WebElement sampletestcases;
+@FindBy(xpath="//a[@href=\"http://adactinhotelapp.com/resources/KnownDefects_HotelApp.pdf\"]")
+private WebElement knowndefects;
 
 
 
 
+
+
+public WebElement getSearch() {
+	return search;
+}
+public WebElement getReset() {
+	return reset;
+}
+public WebElement getMobileapp() {
+	return mobileapp;
+}
+public WebElement getHotelappwebservices() {
+	return hotelappwebservices;
+}
+public WebElement getSampletestcases() {
+	return sampletestcases;
+}
+public WebElement getKnowndefects() {
+	return knowndefects;
+}
 public WebElement getCheckin() {
 	return checkin;
 }
