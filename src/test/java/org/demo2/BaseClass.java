@@ -1,10 +1,13 @@
 package org.demo2;
 
+import java.awt.AWTException;
 import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -81,10 +84,57 @@ public static Select s;
 	Select s2=new Select(element5);
 	s2.selectByVisibleText(value);
 	}
-	
-	
-	
-	
+	public static void navigateto(String url) {
+	driver.navigate().to(url);
+	}
+	public static void navigateBack() {
+	driver.navigate().back();
+	}
+	public static void navigateForward() {
+	driver.navigate().forward();
+	}
+
+	public static void refreshPage() {
+	driver.navigate().refresh();
+	}
+	public static String getAttribute(WebElement element, String attributeName) {
+	return element.getAttribute(attributeName);
+	}
+	public static void moveToElement(WebElement element) {
+	a.moveToElement(element).perform();
+	}
+	public static void pressEnter() throws AWTException {
+	r.keyPress(KeyEvent.VK_ENTER);
+	r.keyRelease(KeyEvent.VK_ENTER);
+	}
+	public static void pressDown() throws AWTException {
+	r.keyPress(KeyEvent.VK_DOWN);
+	r.keyRelease(KeyEvent.VK_DOWN);
+	}
+	public static void pressUp() throws AWTException {
+	r.keyPress(KeyEvent.VK_UP);
+	r.keyRelease(KeyEvent.VK_UP);
+	}
+	public static void pressTab() throws AWTException {
+	r.keyPress(KeyEvent.VK_TAB);
+	r.keyRelease(KeyEvent.VK_TAB);
+	}
+	public static void alertAccept() {
+	Alert a = driver.switchTo().alert();
+	a.accept();
+	}
+	public static void alertDismiss() {
+	Alert a = driver.switchTo().alert();
+	a.dismiss();
+	}
+	public static void alertGetText() {
+	Alert a = driver.switchTo().alert();
+	System.out.println(a.getText());
+	}
+	public static void alertSendKeys(String text) {
+	Alert a = driver.switchTo().alert();
+	a.sendKeys(text);
+	}
 	
 }
 
